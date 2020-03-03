@@ -1,0 +1,36 @@
+Question (Use Sage):
+
+The following describes the simple hash function:
+
+Choose p, q primes and compute N = pq.
+
+Choose g relatively prime to N and less than N.
+
+Then a number n is hashed as follows:
+
+H = gn mod N
+
+If there is an m that hashes to the same value as n, then
+
+gm ≡ gn mod N
+
+so
+gm-n ≡ 1 mod N
+which implies that
+
+m –n ≡ 0 mod φ (N)
+
+So breaking this amounts to finding a multiple of φ (N), which is the hard problem in RSA.
+
+Write a function that takes a bit length n and generates a modulus N of bitlength n and g less than N and relatively prime to it.
+
+Show the output of your function from part (a) for a few outputs.
+
+Using N, g, n as arguments write a function to perform the hashing.
+
+For parts (d)-(f) compute the simple hash:
+N = 600107, g = 154835, n = 239715
+N = 548155966307, g = 189830397891, n = 44344313866
+N = 604766153, g = 12075635, n = 443096843
+
+Write a function that creates a collision given p and q.  Show that your function works for a couple of examples.
