@@ -1,0 +1,12 @@
+#Given the Number to be Encrypted
+m=449
+
+#Given Public Key N and exponent else
+N=37617577
+e=529
+
+#Encrypt the Given Number
+em=power_mod(m,e,N)
+
+#output
+print("Encrypted Message is: ", em)

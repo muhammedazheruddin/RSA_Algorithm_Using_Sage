@@ -1,0 +1,47 @@
+#Use sage to generate an rsa public / private key pair and perform an encryption and decryption
+
+def RSA_Algorithm_Using_Sage():
+    
+    #Read prime numbers from the user
+    p=input('Enter a Prime Value')
+    if (is_prime(p)):
+        q=input('Enter Second Prime Value')
+        if(is_prime(q)):
+	   #calculate the multiplication for the given prime numbers.
+    n=p*q
+
+    #Calculate phi value
+    phi=(p-1)*(q-1)
+
+    #Calculate Public Key Exponenet e
+    e=next_prime(int(phi*random()))
+    
+    print("\n The Public Key Exponent is e=",e)
+        
+    #Calculate Private Key Exponent d
+    d=inverse_mod(e, phi)
+    
+    print("\n The Private Key Exponent is d=",d)
+    
+    #Read a Message from User to Encrypt
+    plain_text=input('Enter a Message to Encrypt it')
+
+    #Perform the Encryption
+    cipher_text=""
+    decipher_text=""
+    
+    #Encrypting the Message given by user
+    for p in list(plain_text):
+        cipher_text+=unichr(mod(ord(p)**e,n))
+           
+    print("\n The Encrypted Message for the Given Mesage:",cipher_text)
+    
+    #Decrypting the Message Encrypted by the RSA Algorithm
+    for d1 in list(cipher_text):
+        decipher_text+=unichr(mod(ord(d1)**d,n))
+
+    print("\n The Encrypted Message for the Given Mesage:",decipher_text)
+        else:
+            print("\nSecond Number is Not a Prime Number. Please enter Prime Number only")
+    else:
+        print("\nSecond Number is Not a Prime Number. Please enter Prime Number only")

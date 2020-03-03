@@ -1,0 +1,36 @@
+#Given Prime Factors p = 1723 and q = 5381, and the private exponent d = 223
+
+def Evaluate_Public_Exponent_Key(p,q,d):
+    #Given Prime Numbers and Private exponent
+    p1=p
+    #is_prime(p)
+    q1=q
+    #is_prime(q)
+    d1=d
+    
+    #calculate the multiplication for the given prime numbers.
+    n=p*q
+
+
+    #Calculate phi value
+    phi=(p-1)*(q-1)
+
+    
+    #Let the public key exponent be e
+    e =  inverse_mod(d, phi)
+
+    print("The Value for the Public Exponent Key:",e)
+
+    #Validating the Public Key and Private Key exponents using the Fermat's Little Theorem
+    if(((e*d).mod(p-1))==1):
+        if(((e*d).mod(q-1))==1):
+            print("\nThe Evaluated Public Key Exponent is Validated and it is correct")
+        else:
+            print("\nThe Evaluated Public Key Exponent is not Identical and may not be Correct")
+    else:
+        print("\nThe Evaluated Public Key Exponent is Incorrect")
+		
+
+
+#Call Method in sage shell after running above method
+Evaluate_Public_Exponent_Key(1723,5381,223)

@@ -1,0 +1,29 @@
+#Given Prime Factors p = 1723 and q = 5381, and the private exponent d = 223
+
+p=1723
+#is_prime(p)
+q=5381
+#is_prime(q)
+
+#calculate the multiplication for the given prime numbers.
+n=p*q
+
+
+#Calculate phi value
+phi=(p-1)*(q-1)
+
+#Given Private exponent
+d=223
+#Let the public key exponent be e
+e =  inverse_mod(d, phi)
+
+print("The Value for the Public Exponent Key:",e)
+
+#Validating the Public Key and Private Key exponents using the Fermat's Little Theorem
+if(((e*d).mod(p-1))==1):
+    if(((e*d).mod(q-1))==1):
+        print("\nThe Evaluated Public Key Exponent is Correct")
+    else:
+        print("\nThe Evaluated Public Key Exponent is not Identical and may not be Correct")
+else:
+    print("\nThe Evaluated Public Key Exponent is Not Correct")

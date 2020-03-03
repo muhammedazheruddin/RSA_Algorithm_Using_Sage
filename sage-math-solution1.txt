@@ -1,0 +1,49 @@
+#Given Public Key Factors p = 6569 and q = 8089, and the public exponent e is 11
+#Given Ciphertext 28901722, Assign this to a variable cipheredText
+def Evaluate_Plaintext():
+    
+    p=6569
+    #is_prime(p)
+    q=8089
+    #is_prime(q)
+
+    #calculate the multiplication for the given prime numbers.
+    n=p*q
+
+    #Given Public Key Exponent e
+    e=11
+
+    #Calculate phi value
+    phi=(p-1)*(q-1)
+
+    #Given Ciphertext as
+    ct=28901722
+
+    print("\nThe Given Ciphertext is:",ct)
+
+    #Caluclate Private Key Exponent
+    d=inverse_mod(e, phi)
+
+    print("\nThe Value to Decipher the given Text is:",d)
+
+    #Perform the Decryption and recover the plain text from the Ciphertext
+
+    pt=power_mod(ct,d,n)
+
+    print("\nThe Plain Text for the given Ciphertext is:",pt)
+
+    #Compare and verify the results if the Plain text produces the exact given Ciphertext or not
+    vt=power_mod(pt,e,n)
+
+    #Validation for the Ciphertext
+    if vt==ct:
+        print("\nThe Evaluated Ciphertext: ",vt," is similar or identical to the given Given Ciphertext: ",ct)
+        print("\nResults are Validated for given inputs")
+    else:
+        print("\nThe Evaluated Ciphertext: ",vt," is not similar or not identical to the given Given Ciphertext: ",ct)
+        print("\nResults are not Validated please check for the proper inputs")
+
+    
+	
+#Call Method in sage shell after running above method
+Evaluate_Plaintext()
