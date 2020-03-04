@@ -23,7 +23,17 @@ m –n ≡ 0 mod φ (N)
 So breaking this amounts to finding a multiple of φ (N), which is the hard problem in RSA.
 
 Write a function that takes a bit length n and generates a modulus N of bitlength n and g less than N and relatively prime to it.
+N > n, n is prime
+N > g, g is prime
 
+def generate_modN(n):
+	x = n.quo_rem(2)[0]
+	while(n < 2^(x-1)):
+		n = random_prime(2^x)g = n
+	while(g < 2^(x-1)):
+		g = random_prime(2^x) 
+	N = n*g
+	return N
 Show the output of your function from part (a) for a few outputs.
 
 Using N, g, n as arguments write a function to perform the hashing.
