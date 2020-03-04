@@ -34,6 +34,12 @@ def generate_modN(n):
 		g = random_prime(2^x) 
 	N = n*g
 	return N
+	
+http://doc.sagemath.org/html/en/reference/polynomial_rings/sage/rings/polynomial/polynomial_integer_dense_flint.html
+https://ask.sagemath.org/question/10037/about-the-output-of-simpified-des/
+https://open.oregonstate.education/cryptography/chapter/chapter-13-the-rsa-function/
+https://www.coursehero.com/file/53161285/Assignment5docx/
+
 Show the output of your function from part (a) for a few outputs.
 
 Using N, g, n as arguments write a function to perform the hashing.
