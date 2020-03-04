@@ -50,3 +50,9 @@ N = 548155966307, g = 189830397891, n = 44344313866
 N = 604766153, g = 12075635, n = 443096843
 
 Write a function that creates a collision given p and q.  Show that your function works for a couple of examples.
+https://runestone.academy/runestone/books/published/pythonds/SortSearch/Hashing.html
+http://www.cs.columbia.edu/~suman/security_arch/crypto_summary.pdf
+https://www.cs.vu.nl/~tcs/ds/lecture6.pdf
+https://www.geeksforgeeks.org/practice-problems-on-hashing/
+https://www.geeksforgeeks.org/double-hashing/
+https://ctf-wiki.github.io/ctf-wiki/crypto/asymmetric/rsa/rsa_complex/
